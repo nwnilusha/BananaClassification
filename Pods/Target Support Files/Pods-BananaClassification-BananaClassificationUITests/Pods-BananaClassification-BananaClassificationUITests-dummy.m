@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_BananaClassification_BananaClassificationUITests : NSObject
+@end
+@implementation PodsDummy_Pods_BananaClassification_BananaClassificationUITests
+@end
