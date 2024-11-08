@@ -11,7 +11,7 @@ import SwiftUI
 struct BananaClassificationApp: App {
     var body: some Scene {
         WindowGroup {
-            CameraView()
+            SplashScreenView()
         }
     }
 }
