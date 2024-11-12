@@ -1,6 +1,0 @@
-framework module Pods_BananaClassification_BananaClassificationUITests {
-  umbrella header "Pods-BananaClassification-BananaClassificationUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
