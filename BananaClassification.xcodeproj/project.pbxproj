@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F40313AE2CD959B3001F3FA0 /* BananaClassifier_01.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F40313AD2CD959B3001F3FA0 /* BananaClassifier_01.mlmodel */; };
+		F420BF412CD588720099766D /* BananaClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F420BF402CD588720099766D /* BananaClassifierModel.mlmodel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4790C052CBF179000D9E21F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4790BEC2CBF178F00D9E21F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4790BF32CBF178F00D9E21F;
+			remoteInfo = BananaClassification;
+		};
+		F4790C0F2CBF179000D9E21F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4790BEC2CBF178F00D9E21F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4790BF32CBF178F00D9E21F;
+			remoteInfo = BananaClassification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F40313AD2CD959B3001F3FA0 /* BananaClassifier_01.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BananaClassifier_01.mlmodel; sourceTree = "<group>"; };
+		F420BF402CD588720099766D /* BananaClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BananaClassifierModel.mlmodel; sourceTree = "<group>"; };
+		F4790BF42CBF178F00D9E21F /* BananaClassification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BananaClassification.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4790C042CBF179000D9E21F /* BananaClassificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BananaClassificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4790C0E2CBF179000D9E21F /* BananaClassificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BananaClassificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F4790BF62CBF178F00D9E21F /* BananaClassification */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BananaClassification;
+			sourceTree = "<group>";
+		};
+		F4790C072CBF179000D9E21F /* BananaClassificationTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BananaClassificationTests;
+			sourceTree = "<group>";
+		};
+		F4790C112CBF179000D9E21F /* BananaClassificationUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BananaClassificationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4790BF12CBF178F00D9E21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4790C012CBF179000D9E21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4790C0B2CBF179000D9E21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4790BEB2CBF178F00D9E21F = {
+			isa = PBXGroup;
+			children = (
+				F420BF402CD588720099766D /* BananaClassifierModel.mlmodel */,
+				F40313AD2CD959B3001F3FA0 /* BananaClassifier_01.mlmodel */,
+				F4790BF62CBF178F00D9E21F /* BananaClassification */,
+				F4790C072CBF179000D9E21F /* BananaClassificationTests */,
+				F4790C112CBF179000D9E21F /* BananaClassificationUITests */,
+				F4790BF52CBF178F00D9E21F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4790BF52CBF178F00D9E21F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4790BF42CBF178F00D9E21F /* BananaClassification.app */,
+				F4790C042CBF179000D9E21F /* BananaClassificationTests.xctest */,
+				F4790C0E2CBF179000D9E21F /* BananaClassificationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4790BF32CBF178F00D9E21F /* BananaClassification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4790C182CBF179000D9E21F /* Build configuration list for PBXNativeTarget "BananaClassification" */;
+			buildPhases = (
+				F4790BF02CBF178F00D9E21F /* Sources */,
+				F4790BF12CBF178F00D9E21F /* Frameworks */,
+				F4790BF22CBF178F00D9E21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F4790BF62CBF178F00D9E21F /* BananaClassification */,
+			);
+			name = BananaClassification;
+			packageProductDependencies = (
+			);
+			productName = BananaClassification;
+			productReference = F4790BF42CBF178F00D9E21F /* BananaClassification.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4790C032CBF179000D9E21F /* BananaClassificationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4790C1B2CBF179000D9E21F /* Build configuration list for PBXNativeTarget "BananaClassificationTests" */;
+			buildPhases = (
+				F4790C002CBF179000D9E21F /* Sources */,
+				F4790C012CBF179000D9E21F /* Frameworks */,
+				F4790C022CBF179000D9E21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4790C062CBF179000D9E21F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F4790C072CBF179000D9E21F /* BananaClassificationTests */,
+			);
+			name = BananaClassificationTests;
+			packageProductDependencies = (
+			);
+			productName = BananaClassificationTests;
+			productReference = F4790C042CBF179000D9E21F /* BananaClassificationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F4790C0D2CBF179000D9E21F /* BananaClassificationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4790C1E2CBF179000D9E21F /* Build configuration list for PBXNativeTarget "BananaClassificationUITests" */;
+			buildPhases = (
+				F4790C0A2CBF179000D9E21F /* Sources */,
+				F4790C0B2CBF179000D9E21F /* Frameworks */,
+				F4790C0C2CBF179000D9E21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4790C102CBF179000D9E21F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F4790C112CBF179000D9E21F /* BananaClassificationUITests */,
+			);
+			name = BananaClassificationUITests;
+			packageProductDependencies = (
+			);
+			productName = BananaClassificationUITests;
+			productReference = F4790C0E2CBF179000D9E21F /* BananaClassificationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4790BEC2CBF178F00D9E21F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					F4790BF32CBF178F00D9E21F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					F4790C032CBF179000D9E21F = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F4790BF32CBF178F00D9E21F;
+					};
+					F4790C0D2CBF179000D9E21F = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F4790BF32CBF178F00D9E21F;
+					};
+				};
+			};
+			buildConfigurationList = F4790BEF2CBF178F00D9E21F /* Build configuration list for PBXProject "BananaClassification" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4790BEB2CBF178F00D9E21F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F4790BF52CBF178F00D9E21F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4790BF32CBF178F00D9E21F /* BananaClassification */,
+				F4790C032CBF179000D9E21F /* BananaClassificationTests */,
+				F4790C0D2CBF179000D9E21F /* BananaClassificationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4790BF22CBF178F00D9E21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4790C022CBF179000D9E21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4790C0C2CBF179000D9E21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4790BF02CBF178F00D9E21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F420BF412CD588720099766D /* BananaClassifierModel.mlmodel in Sources */,
+				F40313AE2CD959B3001F3FA0 /* BananaClassifier_01.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4790C002CBF179000D9E21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4790C0A2CBF179000D9E21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4790C062CBF179000D9E21F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4790BF32CBF178F00D9E21F /* BananaClassification */;
+			targetProxy = F4790C052CBF179000D9E21F /* PBXContainerItemProxy */;
+		};
+		F4790C102CBF179000D9E21F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4790BF32CBF178F00D9E21F /* BananaClassification */;
+			targetProxy = F4790C0F2CBF179000D9E21F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F4790C162CBF179000D9E21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4790C172CBF179000D9E21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4790C192CBF179000D9E21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BananaClassification/Preview Content\"";
+				DEVELOPMENT_TEAM = 247D5GB785;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Give access to camera for image capture";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use camera to capture video for object recognision";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Nilusha.BananaClassification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4790C1A2CBF179000D9E21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BananaClassification/Preview Content\"";
+				DEVELOPMENT_TEAM = 247D5GB785;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Give access to camera for image capture";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use camera to capture video for object recognision";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Nilusha.BananaClassification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F4790C1C2CBF179000D9E21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 247D5GB785;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Nilusha.BananaClassificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BananaClassification.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BananaClassification";
+			};
+			name = Debug;
+		};
+		F4790C1D2CBF179000D9E21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 247D5GB785;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Nilusha.BananaClassificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BananaClassification.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BananaClassification";
+			};
+			name = Release;
+		};
+		F4790C1F2CBF179000D9E21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 247D5GB785;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Nilusha.BananaClassificationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BananaClassification;
+			};
+			name = Debug;
+		};
+		F4790C202CBF179000D9E21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 247D5GB785;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Nilusha.BananaClassificationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BananaClassification;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4790BEF2CBF178F00D9E21F /* Build configuration list for PBXProject "BananaClassification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4790C162CBF179000D9E21F /* Debug */,
+				F4790C172CBF179000D9E21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4790C182CBF179000D9E21F /* Build configuration list for PBXNativeTarget "BananaClassification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4790C192CBF179000D9E21F /* Debug */,
+				F4790C1A2CBF179000D9E21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4790C1B2CBF179000D9E21F /* Build configuration list for PBXNativeTarget "BananaClassificationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4790C1C2CBF179000D9E21F /* Debug */,
+				F4790C1D2CBF179000D9E21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4790C1E2CBF179000D9E21F /* Build configuration list for PBXNativeTarget "BananaClassificationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4790C1F2CBF179000D9E21F /* Debug */,
+				F4790C202CBF179000D9E21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4790BEC2CBF178F00D9E21F /* Project object */;
+}
