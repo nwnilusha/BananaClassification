@@ -83,7 +83,7 @@ struct UploadPhotoView: View {
     
     // Function to check banana quality
     private func checkBananaQuality(for image: UIImage) {
-        modelManager.setupModels()
+        modelManager.setupModelsForImage()
         modelManager.performDetection(on: image) { result in
             DispatchQueue.main.async {
                 self.predictionResult = result
