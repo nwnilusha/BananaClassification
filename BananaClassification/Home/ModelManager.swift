@@ -5,11 +5,9 @@
 //  Created by Nilusha Niwanthaka Wimalasena on 8/11/24.
 //
 
-import Foundation
-import SwiftUI
-import CoreML
-import AVFoundation
 import Vision
+import CoreML
+import UIKit
 
 class ModelManager {
     
@@ -28,11 +26,6 @@ class ModelManager {
         if let qualityModel = try? VNCoreMLModel(for: BananaClassifierModel().model) {
             self.qualityModel = qualityModel
         }
-        
-//        guard let qualityModel = try? VNCoreMLModel(for: BananaClassifierModel().model) else {
-//            predictionResult = "Failed to load model"
-//            return
-//        }
     }
     
     // For handling CMSampleBuffer (video frames)

@@ -32,9 +32,6 @@ struct UploadPhotoView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 300)
                     .cornerRadius(10)
-                    .onAppear {
-                        checkBananaQuality(for: image)
-                    }
             } else {
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
@@ -69,6 +66,11 @@ struct UploadPhotoView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
+        }
+        .onChange(of: selectedImage) { newImage in
+            if let image = newImage {
+                checkBananaQuality(for: image)
+            }
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(selectedImage: $selectedImage, sourceType: .photoLibrary)
@@ -123,3 +125,4 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
     }
 }
+
