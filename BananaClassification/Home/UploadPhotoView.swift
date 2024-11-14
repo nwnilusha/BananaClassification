@@ -25,7 +25,6 @@ struct UploadPhotoView: View {
                 .font(.title2)
                 .padding()
             
-            // Display selected image
             if let image = selectedImage {
                 Image(uiImage: image)
                     .resizable()
@@ -81,7 +80,6 @@ struct UploadPhotoView: View {
         .padding()
     }
     
-    // Function to check banana quality
     private func checkBananaQuality(for image: UIImage) {
         modelManager.setupModelsForImage()
         modelManager.performDetection(on: image) { result in
@@ -92,7 +90,6 @@ struct UploadPhotoView: View {
     }
 }
 
-// ImagePicker struct for selecting or capturing image
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage?
     var sourceType: UIImagePickerController.SourceType

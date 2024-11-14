@@ -38,7 +38,6 @@ struct BananaDetectionView: View {
     }
 }
 
-// Camera preview setup for SwiftUI
 struct CameraPreview: UIViewRepresentable {
     @ObservedObject var cameraManager: CameraManager
     

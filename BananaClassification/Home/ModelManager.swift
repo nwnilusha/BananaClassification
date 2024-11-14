@@ -117,10 +117,6 @@ class ModelManager {
             return
         }
         
-//        guard let latestSampleBuffer = latestSampleBuffer else {
-//            completion?("No frame available")
-//            return
-//        }
         guard let bananaImage = self.bananaImage else {
             completion?("No Image found")
             return
@@ -130,20 +126,6 @@ class ModelManager {
             completion?("Invalid image format")
             return
         }
-        
-//        ////////
-//        let request = VNCoreMLRequest(model: qualityModel) { request, _ in
-//            if let results = request.results as? [VNClassificationObservation],
-//               let bestResult = results.first {
-//                completion?("Quality: \(bestResult.identifier)")
-//            } else {
-//                completion?("Quality analysis failed")
-//            }
-//        }
-//
-//        let handler = VNImageRequestHandler(cmSampleBuffer: latestSampleBuffer, options: [:])
-//        try? handler.perform([request])
-//        //////////
         
         let request = VNCoreMLRequest(model: qualityModel) { request, error in
             if let results = request.results as? [VNClassificationObservation],
@@ -161,36 +143,6 @@ class ModelManager {
             completion?("Error performing request: \(error.localizedDescription)")
         }
     }
-    
-//    private func checkBananaQuality(for image: UIImage) {
-//            guard let model = try? VNCoreMLModel(for: BananaClassifierModel().model) else {
-//                predictionResult = "Failed to load model"
-//                return
-//            }
-//            
-//            guard let ciImage = CIImage(image: image) else {
-//                predictionResult = "Invalid image format"
-//                return
-//            }
-//            
-//            let request = VNCoreMLRequest(model: model) { request, error in
-//                if let results = request.results as? [VNClassificationObservation],
-//                   let firstResult = results.first {
-//                    DispatchQueue.main.async {
-//                        predictionResult = "Result: \(firstResult.identifier) with confidence \(firstResult.confidence * 100)%"
-//                    }
-//                } else {
-//                    predictionResult = "No result from model"
-//                }
-//            }
-//            
-//            let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
-//            do {
-//                try handler.perform([request])
-//            } catch {
-//                predictionResult = "Error performing request: \(error.localizedDescription)"
-//            }
-//        }
     
     private func analyzeBananaQuality(completion: ((String) -> Void)?) {
         guard let qualityModel = qualityModel else {

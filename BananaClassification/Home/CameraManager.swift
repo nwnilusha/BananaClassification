@@ -20,6 +20,8 @@ class CameraManager: NSObject, ObservableObject {
     private var modelManager = ModelManager()
     private var completion: ((String) -> Void)?
     
+    @Published var boundingBoxes: [CGRect] = []
+    
     override init() {
         super.init()
         modelManager.setupModels()
@@ -44,6 +46,34 @@ class CameraManager: NSObject, ObservableObject {
             completion("Error: \(error.localizedDescription)")
         }
     }
+    
+    private var detectionRequest: VNCoreMLRequest?
+        
+        private func setupVisionModel() {
+            guard let model = try? VNCoreMLModel(for: MobileNetV2().model) else { return }
+            
+            detectionRequest = VNCoreMLRequest(model: model) { [weak self] request, error in
+                self?.processDetections(request: request, error: error)
+            }
+            
+            detectionRequest?.imageCropAndScaleOption = .scaleFill
+        }
+        
+        private func processDetections(request: VNRequest, error: Error?) {
+            guard let results = request.results as? [VNRecognizedObjectObservation] else {
+                DispatchQueue.main.async {
+                    self.boundingBoxes = []
+                    self.completion?("No objects detected")
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                // Update bounding boxes for each detected object
+                self.boundingBoxes = results.map { $0.boundingBox }
+                self.completion?("\(results.count) objects detected")
+            }
+        }
     
     private func updateUI(with message: String) {
         DispatchQueue.main.async {
