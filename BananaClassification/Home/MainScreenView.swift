@@ -23,13 +23,13 @@ struct MainScreenView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 80)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Text("Capture Video")
                                 .font(.headline)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
-                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 180)
-                        .background(Color.blue)
+                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 150)
+                        .background(Color.white)
                         .cornerRadius(20)
                     }
 
@@ -39,33 +39,32 @@ struct MainScreenView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 80)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Text("Upload Photo")
                                 .font(.headline)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
-                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 180)
-                        .background(Color.green)
+                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 150)
+                        .background(Color.white)
                         .cornerRadius(20)
                     }
-
-                    Button(action: {
-                        print("Send Image button tapped")
-                    }) {
+                    
+                    NavigationLink(destination: SendImageView()) {
                         HStack {
                             Image(systemName: "paperplane.fill")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 80)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                             Text("Send Image")
                                 .font(.headline)
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
-                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 180)
-                        .background(Color.orange)
+                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 150)
+                        .background(Color.white)
                         .cornerRadius(20)
                     }
+
                 }
                 .navigationTitle("Banana Quality Detector")
             }

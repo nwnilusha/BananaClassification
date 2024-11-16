@@ -18,8 +18,8 @@ struct SplashScreenView: View {
             
             VStack {
                 Text("Banana Quality Detector")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
+                    .font(.headline)
+                    .foregroundColor(.black)
             }
         }
         .onAppear {

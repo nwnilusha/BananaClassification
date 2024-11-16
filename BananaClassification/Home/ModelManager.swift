@@ -32,10 +32,15 @@ class ModelManager {
         }
     }
     
-    func setupModelsForImage() {
+    func setupModelsForImage(qualityDetection: Bool) {
         if let model = try? VNCoreMLModel(for: MobileNetV2().model) {
             detectionRequest = VNCoreMLRequest(model: model) { [weak self] request, error in
-                self?.handleObjectDetectionImage(request: request, error: error, completion: self?.completion)
+                if qualityDetection {
+                    self?.handleObjectDetectionImage(request: request, error: error, completion: self?.completion)
+                }
+                else {
+                    self?.handleBananaDetection(request: request, error: error, completion: self?.completion)
+                }
             }
         }
         
@@ -60,8 +65,7 @@ class ModelManager {
             completion("Error processing frame")
         }
     }
-    
-    // For handling UIImage (e.g., .jpg and .png images)
+
     func performDetection(on image: UIImage, completion: @escaping (String) -> Void) {
         guard let detectionRequest = detectionRequest else {
             completion("Detection model not loaded")
@@ -106,6 +110,20 @@ class ModelManager {
         
         if topResult.identifier.contains("banana") {
             analyzeBananaQualityForImage(completion: completion)
+        } else {
+            completion?("No banana found")
+        }
+    }
+    
+    private func handleBananaDetection(request: VNRequest, error: Error?, completion: ((String) -> Void)?) {
+        guard let results = request.results as? [VNClassificationObservation],
+              let topResult = results.first else {
+            completion?("No banana found")
+            return
+        }
+        
+        if topResult.identifier.contains("banana") {
+            completion?("Found Banana")
         } else {
             completion?("No banana found")
         }

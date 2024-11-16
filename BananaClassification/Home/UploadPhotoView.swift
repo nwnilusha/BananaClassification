@@ -81,7 +81,7 @@ struct UploadPhotoView: View {
     }
     
     private func checkBananaQuality(for image: UIImage) {
-        modelManager.setupModelsForImage()
+        modelManager.setupModelsForImage(qualityDetection: true)
         modelManager.performDetection(on: image) { result in
             DispatchQueue.main.async {
                 self.predictionResult = result
