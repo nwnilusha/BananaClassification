@@ -123,7 +123,7 @@ class ModelManager {
         }
         
         if topResult.identifier.contains("banana") {
-            completion?("Found Banana")
+            completion?("Banana Detected")
         } else {
             completion?("No banana found")
         }
