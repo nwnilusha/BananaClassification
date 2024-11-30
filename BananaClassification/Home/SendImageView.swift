@@ -130,28 +130,6 @@ struct SendImageView: View {
     }
 
     private func uploadImageToGitHub() {
-        guard let image = capturedImage, let imageData = image.jpegData(compressionQuality: 0.8) else { return }
 
-        let url = URL(string: "https://api.github.com/repos/<username>/<repo>/contents/<path-to-save-image>")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        request.setValue("Bearer <your-personal-access-token>", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let base64Image = imageData.base64EncodedString()
-        let body: [String: Any] = [
-            "message": "Upload banana quality image",
-            "content": base64Image
-        ]
-
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Failed to upload image: \(error.localizedDescription)")
-                return
-            }
-            print("Image uploaded successfully!")
-        }.resume()
     }
 }
