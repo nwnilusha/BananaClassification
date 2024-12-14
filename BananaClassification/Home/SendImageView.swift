@@ -23,7 +23,6 @@ struct SendImageView: View {
                 .font(.title)
                 .padding()
 
-            // Display captured image or placeholder
             if let image = capturedImage {
                 Image(uiImage: image)
                     .resizable()
@@ -38,7 +37,6 @@ struct SendImageView: View {
                     .overlay(Text("No image captured").foregroundColor(.gray))
             }
 
-            // Capture Image Button
             Button("Capture Image") {
                 isCameraPresented = true
             }
