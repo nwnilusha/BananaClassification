@@ -41,7 +41,9 @@ class CameraManager: NSObject, ObservableObject {
 
             videoOutput.setSampleBufferDelegate(self, queue: objectRecognitionQueue)
             captureSession.addOutput(videoOutput)
-            captureSession.startRunning()
+            DispatchQueue.global(qos: .background).async {
+                self.captureSession.startRunning()
+            }
         } catch {
             completion("Error: \(error.localizedDescription)")
         }

@@ -27,7 +27,7 @@ class ModelManager {
             }
         }
         
-        if let qualityModel = try? VNCoreMLModel(for: BananaClassifierModel().model) {
+        if let qualityModel = try? VNCoreMLModel(for: BananaClassificationModel().model) {
             self.qualityModel = qualityModel
         }
     }
@@ -44,7 +44,7 @@ class ModelManager {
             }
         }
         
-        if let qualityModel = try? VNCoreMLModel(for: BananaClassifierModel().model) {
+        if let qualityModel = try? VNCoreMLModel(for: BananaClassificationModel().model) {
             self.qualityModel = qualityModel
         }
     }
