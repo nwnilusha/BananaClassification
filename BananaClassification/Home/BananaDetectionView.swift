@@ -37,8 +37,9 @@ struct BananaDetectionView: View {
         }
         .onAppear {
             cameraManager.setupCamera { result in
+                print("Current ripeness Results : \(result)")
                 detectionResult = result
-                viewModel.selectedCategory = result
+                viewModel.selectedCategory = String(result.dropFirst(9))
             }
         }
         .sheet(isPresented: $showingCredits) {
