@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Vision
 import MessageUI
 
 struct SendImageView: View {
@@ -18,95 +17,99 @@ struct SendImageView: View {
     @State private var selectedStage: String?
     @State private var isSendEnabled = false
     @State private var isMailPresented = false
-    @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
+    @State private var navigateBack = false // Tracks navigation back to main screen
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Banana Quality Detector")
-                .font(.title)
-                .padding()
+            VStack(spacing: 20) {
+                Text("Banana Quality Detector")
+                    .font(.title)
+                    .padding()
 
-            if let image = capturedImage {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 300, height: 300)
-                    .cornerRadius(10)
-            } else {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.2))
-                    .frame(width: 300, height: 300)
-                    .cornerRadius(10)
-                    .overlay(Text("No image captured").foregroundColor(.gray))
-            }
-
-            Button("Capture Image") {
-                isCameraPresented = true
-                isSendEnabled = false
-                selectedStage = nil
-            }
-            .font(.headline)
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-
-            if isBananaDetected {
-                VStack(spacing: 10) {
-                    HStack {
-                        ForEach(["Under Ripe", "Barely Ripe", "Ripe"], id: \.self) { stage in
-                            Button(stage) {
-                                selectedStage = stage
-                                isSendEnabled = true
-                            }
-                            .font(.headline)
-                            .frame(height: 40)
-                            .frame(maxWidth: .infinity)
-                            .background(selectedStage == stage ? Color.green : Color.gray.opacity(0.2))
-                            .cornerRadius(10)
-                            .disabled(selectedStage == stage)
-                        }
-                    }
-                    HStack {
-                        ForEach(["Over Ripe", "Rotten"], id: \.self) { stage in
-                            Button(stage) {
-                                selectedStage = stage
-                                isSendEnabled = true
-                            }
-                            .font(.headline)
-                            .frame(height: 40)
-                            .frame(maxWidth: .infinity)
-                            .background(selectedStage == stage ? Color.green : Color.gray.opacity(0.2))
-                            .cornerRadius(10)
-                            .disabled(selectedStage == stage)
-                        }
-                    }
+                if let image = capturedImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .cornerRadius(10)
+                } else {
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.2))
+                        .frame(width: 300, height: 300)
+                        .cornerRadius(10)
+                        .overlay(Text("No image captured").foregroundColor(.gray))
                 }
-            }
 
-            if isSendEnabled {
-                Button("Send Image") {
-                    sendEmailWithImage()
+                Button("Capture Image") {
+                    isCameraPresented = true
+                    isSendEnabled = false
+                    selectedStage = nil
                 }
                 .font(.headline)
                 .padding()
-                .background(Color.orange)
+                .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(10)
+
+                if isBananaDetected {
+                    VStack(spacing: 10) {
+                        HStack {
+                            ForEach(["Under Ripe", "Barely Ripe", "Ripe"], id: \.self) { stage in
+                                Button(stage) {
+                                    selectedStage = stage
+                                    isSendEnabled = true
+                                }
+                                .font(.headline)
+                                .frame(height: 40)
+                                .frame(maxWidth: .infinity)
+                                .background(selectedStage == stage ? Color.green : Color.gray.opacity(0.2))
+                                .cornerRadius(10)
+                                .disabled(selectedStage == stage)
+                            }
+                        }
+                        HStack {
+                            ForEach(["Over Ripe", "Rotten"], id: \.self) { stage in
+                                Button(stage) {
+                                    selectedStage = stage
+                                    isSendEnabled = true
+                                }
+                                .font(.headline)
+                                .frame(height: 40)
+                                .frame(maxWidth: .infinity)
+                                .background(selectedStage == stage ? Color.green : Color.gray.opacity(0.2))
+                                .cornerRadius(10)
+                                .disabled(selectedStage == stage)
+                            }
+                        }
+                    }
+                }
+
+                if isSendEnabled {
+                    Button("Send Image") {
+                        isSendEnabled = false
+                        selectedStage = nil
+                        isMailPresented = true
+                    }
+                    .font(.headline)
+                    .padding()
+                    .background(Color.orange)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                }
             }
-        }
-        .onChange(of: capturedImage) { newImage in
-            if let image = newImage {
-                checkBananaQuality(for: image)
+            .onChange(of: capturedImage) { newImage in
+                if let image = newImage {
+                    checkBananaQuality(for: image)
+                }
             }
-        }
-        .sheet(isPresented: $isCameraPresented) {
-            ImagePicker(capturedImage: $capturedImage, sourceType: .camera)
-        }
-        .sheet(isPresented: $isMailPresented) {
-            MailView(isPresented: $isMailPresented, result: $mailResult, capturedImage: capturedImage, selectedStage: self.selectedStage ?? "No Stage Selected")
-        }
-        .padding()
+            .sheet(isPresented: $isCameraPresented) {
+                ImagePicker(capturedImage: $capturedImage, sourceType: .camera)
+            }
+            .fullScreenCover(isPresented: $isMailPresented) {
+                
+                MailView(isPresented: $isMailPresented, navigateBack: $navigateBack, image: capturedImage, selectedStage: selectedStage ?? "No stage selected")
+            }
+            .padding()
+
     }
     
     private func checkBananaQuality(for image: UIImage) {
@@ -117,14 +120,6 @@ struct SendImageView: View {
                 isBananaDetected = (result == "Banana Detected") ? true : false
             }
         }
-    }
-
-    private func sendEmailWithImage() {
-        guard MFMailComposeViewController.canSendMail() else {
-            print("Mail services are not available")
-            return
-        }
-        isMailPresented = true
     }
 
     struct ImagePicker: UIViewControllerRepresentable {
@@ -163,46 +158,45 @@ struct SendImageView: View {
 
 struct MailView: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
-    @Binding var result: Result<MFMailComposeResult, Error>?
-    var capturedImage: UIImage?
+    @Binding var navigateBack: Bool
+    var image: UIImage?
     var selectedStage: String
-
+    
     func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let mail = MFMailComposeViewController()
         mail.mailComposeDelegate = context.coordinator
         mail.setToRecipients(["nnw.nilusha@gmail.com"])
-        mail.setSubject("Banana Quality Detection Result - \(selectedStage)")
-        mail.setMessageBody("Find the attached image.", isHTML: false)
-
-        if let imageData = capturedImage?.jpegData(compressionQuality: 0.8) {
+        mail.setSubject("Banana Ripeness Stage")
+        mail.setMessageBody("Here's the selected banana ripeness stage - \(selectedStage)", isHTML: false)
+        
+        if let image = image, let imageData = image.jpegData(compressionQuality: 0.8) {
             mail.addAttachmentData(imageData, mimeType: "image/jpeg", fileName: "banana.jpg")
         }
-
+        
         return mail
     }
-
+    
     func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {}
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
+    
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
         var parent: MailView
-
+        
         init(_ parent: MailView) {
             self.parent = parent
         }
-
+        
         func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-            if let error = error {
-                parent.result = .failure(error)
-            } else {
-                parent.result = .success(result)
+            controller.dismiss(animated: true) {
+                // After dismissing the mail composer, navigate back
+                self.parent.isPresented = false
+                self.parent.navigateBack = true
             }
-            parent.isPresented = false
-            controller.dismiss(animated: true)
         }
     }
 }
+
 
