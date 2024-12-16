@@ -14,7 +14,7 @@ struct SendImageView: View {
     @State private var capturedImage: UIImage?
     @State private var isCameraPresented = false
     @State private var isBananaDetected = false
-    @State private var selectedStage: String?
+    @State private var selectedStage: String = "No Stage Selected"
     @State private var isSendEnabled = false
     @State private var isMailPresented = false
     @State private var navigateBack = false // Tracks navigation back to main screen
@@ -42,7 +42,6 @@ struct SendImageView: View {
                 Button("Capture Image") {
                     isCameraPresented = true
                     isSendEnabled = false
-                    selectedStage = nil
                 }
                 .font(.headline)
                 .padding()
@@ -86,7 +85,6 @@ struct SendImageView: View {
                 if isSendEnabled {
                     Button("Send Image") {
                         isSendEnabled = false
-                        selectedStage = nil
                         isMailPresented = true
                     }
                     .font(.headline)
@@ -106,7 +104,7 @@ struct SendImageView: View {
             }
             .fullScreenCover(isPresented: $isMailPresented) {
                 
-                MailView(isPresented: $isMailPresented, navigateBack: $navigateBack, image: capturedImage, selectedStage: selectedStage ?? "No stage selected")
+                MailView(isPresented: $isMailPresented, navigateBack: $navigateBack, image: capturedImage, selectedStage: $selectedStage)
             }
             .padding()
 
@@ -160,14 +158,14 @@ struct MailView: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
     @Binding var navigateBack: Bool
     var image: UIImage?
-    var selectedStage: String
+    @Binding var selectedStage: String
     
     func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let mail = MFMailComposeViewController()
         mail.mailComposeDelegate = context.coordinator
         mail.setToRecipients(["nnw.nilusha@gmail.com"])
         mail.setSubject("Banana Ripeness Stage")
-        mail.setMessageBody("Here's the selected banana ripeness stage - \(selectedStage)", isHTML: false)
+        mail.setMessageBody("Here's the selected banana ripeness stage - \(String(describing: selectedStage))", isHTML: false)
         
         if let image = image, let imageData = image.jpegData(compressionQuality: 0.8) {
             mail.addAttachmentData(imageData, mimeType: "image/jpeg", fileName: "banana.jpg")
@@ -191,9 +189,9 @@ struct MailView: UIViewControllerRepresentable {
         
         func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
             controller.dismiss(animated: true) {
-                // After dismissing the mail composer, navigate back
                 self.parent.isPresented = false
                 self.parent.navigateBack = true
+                self.parent.selectedStage = "No Stage Selected"
             }
         }
     }
