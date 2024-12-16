@@ -18,6 +18,8 @@ struct UploadPhotoView: View {
     @State private var showImagePicker = false
     @State private var showCamera = false
     @State private var predictionResult: String = "Select an image to analyze"
+    @State private var showingCredits = false
+    let viewModel = DetailsViewModel()
     
     var body: some View {
         VStack(spacing: 20) {
@@ -59,9 +61,13 @@ struct UploadPhotoView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
             
-            // Display prediction result
+            Button("More Details") {
+                showingCredits.toggle()
+            }
+
             Text(predictionResult)
                 .font(.headline)
+                .bold()
                 .padding()
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
@@ -77,14 +83,68 @@ struct UploadPhotoView: View {
         .sheet(isPresented: $showCamera) {
             ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
         }
-        .padding()
+        .sheet(isPresented: $showingCredits) {
+            VStack(alignment: .leading, spacing: 10) {
+                
+                HStack {
+                    Text(viewModel.ripenessStageText)
+                        .font(.headline)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(viewModel.currentStage)
+                        .font(.body)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.vertical, 5)
+                
+                HStack {
+                    Text(viewModel.appearanceTitle)
+                        .font(.headline)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(viewModel.currentAppearance)
+                        .font(.body)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.vertical, 5)
+                
+                HStack {
+                    Text(viewModel.stageDuration)
+                        .font(.headline)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(viewModel.currentDuration)
+                        .font(.body)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.vertical, 5)
+                
+                HStack {
+                    Text(viewModel.healthBenefits)
+                        .font(.headline)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(viewModel.currentBenefits)
+                        .font(.body)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.vertical, 5)
+            }
+            .padding()
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.hidden)
+        }
+//        .padding()
     }
     
     private func checkBananaQuality(for image: UIImage) {
         modelManager.setupModelsForImage(qualityDetection: true)
         modelManager.performDetection(on: image) { result in
+            print("Image result : \(result)")
             DispatchQueue.main.async {
-                self.predictionResult = result
+                let qualityResult = result.split(separator: " ")
+                self.predictionResult = "Quality : " + String(qualityResult[1])
+                viewModel.selectedCategory = String(qualityResult[1])
             }
         }
     }

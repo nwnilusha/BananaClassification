@@ -11,7 +11,7 @@ class DetailsViewModel: ObservableObject {
     @Published var selectedCategory: String = "unripe"
 
     private let bananaData: [String: (stage: String, appearance: String, duration: String, benefits: String)] = [
-        "unripe": (
+        "underripe": (
             stage: "Underripe",
             appearance: "Very firm; dark green to medium-green",
             duration: "1-4 days",
