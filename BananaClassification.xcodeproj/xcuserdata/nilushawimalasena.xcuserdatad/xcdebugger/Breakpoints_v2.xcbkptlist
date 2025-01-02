@@ -14,8 +14,8 @@
             filePath = "BananaClassification/Home/UploadPhotoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -30,40 +30,10 @@
             filePath = "BananaClassification/Home/UploadPhotoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "checkBananaQuality(for:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7906A26A-4D81-44E2-89C2-3665A7AE8140 - d110cd027a03dba"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BananaClassification.UploadPhotoView.checkBananaQuality(for: __C.UIImage) -&gt; ()"
-                  moduleName = "BananaClassification.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nilushawimalasena/Documents/DBS_MSc/Semestor_03/BananaClassification/BananaClassification/Home/UploadPhotoView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87">
-               </Location>
-               <Location
-                  uuid = "7906A26A-4D81-44E2-89C2-3665A7AE8140 - c6a4fe57d5693ad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in BananaClassification.UploadPhotoView.checkBananaQuality(for: __C.UIImage) -&gt; ()"
-                  moduleName = "BananaClassification.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nilushawimalasena/Documents/DBS_MSc/Semestor_03/BananaClassification/BananaClassification/Home/UploadPhotoView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -76,8 +46,8 @@
             filePath = "BananaClassification/Home/UploadPhotoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "checkBananaQuality(for:)"
             landmarkType = "7">
          </BreakpointContent>

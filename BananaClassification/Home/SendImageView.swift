@@ -17,7 +17,7 @@ struct SendImageView: View {
     @State private var selectedStage: String = "No Stage Selected"
     @State private var isSendEnabled = false
     @State private var isMailPresented = false
-    @State private var navigateBack = false // Tracks navigation back to main screen
+    @State private var navigateBack = false 
 
     var body: some View {
             VStack(spacing: 20) {

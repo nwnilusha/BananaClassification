@@ -71,7 +71,6 @@ class CameraManager: NSObject, ObservableObject {
             }
             
             DispatchQueue.main.async {
-                // Update bounding boxes for each detected object
                 self.boundingBoxes = results.map { $0.boundingBox }
                 self.completion?("\(results.count) objects detected")
             }

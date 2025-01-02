@@ -43,7 +43,6 @@ class DetailsViewModel: ObservableObject {
         )
     ]
 
-    // Accessors for current category details
     var ripenessStageText: String { "Ripeness Stage" }
     var appearanceTitle: String { "Appearance" }
     var stageDuration: String { "Stage Duration" }

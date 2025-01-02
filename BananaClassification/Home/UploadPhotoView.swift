@@ -40,8 +40,7 @@ struct UploadPhotoView: View {
                     .cornerRadius(10)
                     .overlay(Text("No image selected").foregroundColor(.gray))
             }
-            
-            // Button to open image picker
+
             Button("Select Image") {
                 showImagePicker = true
             }
@@ -50,8 +49,7 @@ struct UploadPhotoView: View {
             .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(10)
-            
-            // Button to capture image from camera
+
             Button("Capture Image") {
                 showCamera = true
             }

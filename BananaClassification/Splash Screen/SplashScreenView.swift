@@ -13,17 +13,22 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            Color.yellow // Background color for splash screen
+            Color.yellow
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text("Banana Quality Detector")
                     .font(.headline)
                     .foregroundColor(.black)
+                Image("BananaImage")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
             }
         }
         .onAppear {
-            // Navigate to Main Screen after 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 isActive = true
             }
